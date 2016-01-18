@@ -1,6 +1,6 @@
 <?php
 /**
- * Get CLI stats from Cisco WLC and insert into Graphite/Carbon.
+ * Get SNMP stats from Cisco WLC and insert into Graphite/Carbon.
  *
  * @author: Arjan Koopen <arjan@koopen.net>
  */
