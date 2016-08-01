@@ -24,6 +24,13 @@ foreach ($controllers as $c_name => $ip) {
 	sendGraphite("wlc_total_memory", $total_memory[0]);
 	$free_memory = explode(" ", get_snmp("1.3.6.1.4.1.14179.1.1.5.3.0", "INTEGER"));
 	sendGraphite("wlc_free_memory", $free_memory[0]);
+  
+    /**
+     * WLC CPU - Overall
+     */
+	$wlc_cpu = explode(" ", get_snmp("1.3.6.1.4.1.14179.1.1.5.1.0", "INTEGER"));
+	sendGraphite("wlc_cpu", $wlc_cpu[0]);
+
 }
 
 foreach ($controllers as $c_name => $ip) {
