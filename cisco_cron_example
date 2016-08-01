@@ -1,0 +1,1 @@
+*/1 * * * * root /opt/cisco_wlc/cisco_stats.sh
