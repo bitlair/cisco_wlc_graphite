@@ -31,6 +31,12 @@ foreach ($controllers as $c_name => $ip) {
 	$wlc_cpu = explode(" ", get_snmp("1.3.6.1.4.1.14179.1.1.5.1.0", "INTEGER"));
 	sendGraphite("wlc_cpu", $wlc_cpu[0]);
 
+	 /**
+     * WLC Connected APs
+     */
+	$wlc_total_ap = explode(" ", get_snmp("1.3.6.1.4.1.9.9.618.1.8.4.0", "Gauge32"));
+	sendGraphite("wlc_total_ap", $wlc_total_ap[0]);
+
 }
 
 foreach ($controllers as $c_name => $ip) {
