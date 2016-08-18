@@ -118,7 +118,7 @@ function getEssTable() {
 
         foreach ($temp as $key => $value) {
                 $tmp = explode(".",$key);
-                $table[$tmp[count($tmp)-1]] = sanatize_snmp("STRING", $value);
+                $table[$tmp[count($tmp)-1]] = str_replace(" ", "_", str_replace(".", "_", sanatize_snmp("STRING", $value)));
         }
 
         return $table;
